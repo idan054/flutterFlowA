@@ -265,7 +265,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => JustApageWidget(
-                                          description: '\$.description',
+                                          description: getJsonField(
+                                                  articlesItem,
+                                                  r'$.description')
+                                              .toString(),
                                         ),
                                       ),
                                     );
