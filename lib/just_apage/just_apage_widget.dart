@@ -22,10 +22,17 @@ class _JustApageWidgetState extends State<JustApageWidget> {
     return Scaffold(
       key: scaffoldKey,
       body: SafeArea(
-        child: Text(
-          widget.description,
-          style: FlutterFlowTheme.bodyText1.override(
-            fontFamily: 'Poppins',
+        child: Align(
+          alignment: Alignment(0, 0),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(1, 0, 0, 0),
+            child: Text(
+              widget.description,
+              style: FlutterFlowTheme.bodyText1.override(
+                fontFamily: 'Poppins',
+                fontSize: 16,
+              ),
+            ),
           ),
         ),
       ),
