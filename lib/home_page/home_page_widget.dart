@@ -236,55 +236,39 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         itemCount: articles.length,
                         itemBuilder: (context, articlesIndex) {
                           final articlesItem = articles[articlesIndex];
-                          return InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => JustApageWidget(
-                                    description: getJsonField(
-                                            gridViewTopBusinessSearchResponse,
-                                            r'')
-                                        .toString(),
-                                  ),
-                                ),
-                              );
-                            },
-                            child: Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: Colors.white,
-                              elevation: 4,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Align(
-                                alignment: Alignment(0, 0),
-                                child: InkWell(
-                                  onTap: () async {
-                                    await Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => JustApageWidget(
-                                          description: getJsonField(
-                                                  articlesItem,
-                                                  r'$.description')
-                                              .toString(),
-                                          titleFullPath: getJsonField(
-                                                  gridViewTopBusinessSearchResponse,
-                                                  r'$.articles[:].title')
-                                              .toString(),
-                                        ),
+                          return Card(
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.white,
+                            elevation: 4,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Align(
+                              alignment: Alignment(0, 0),
+                              child: InkWell(
+                                onTap: () async {
+                                  await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => JustApageWidget(
+                                        description: getJsonField(
+                                                articlesItem, r'$.description')
+                                            .toString(),
+                                        titleFullPath: getJsonField(
+                                                gridViewTopBusinessSearchResponse,
+                                                r'$.articles[:].title')
+                                            .toString(),
                                       ),
-                                    );
-                                  },
-                                  child: Text(
-                                    getJsonField(articlesItem, r'$. author')
-                                        .toString(),
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.w500,
                                     ),
+                                  );
+                                },
+                                child: Text(
+                                  getJsonField(articlesItem, r'$. author')
+                                      .toString(),
+                                  style: FlutterFlowTheme.bodyText1.override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
                               ),
