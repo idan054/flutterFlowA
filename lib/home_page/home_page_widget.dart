@@ -269,6 +269,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   articlesItem,
                                                   r'$.description')
                                               .toString(),
+                                          titleFullPath: getJsonField(
+                                                  gridViewTopBusinessSearchResponse,
+                                                  r'$.articles[:].title')
+                                              .toString(),
                                         ),
                                       ),
                                     );
